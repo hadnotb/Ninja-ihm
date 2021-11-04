@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <form action="game.html" method="get">  
+
+        <h1 id ='title'>Greta Dev Web Fight 2021/2022</h1>
+        <section id='config-player-name'>
+                
+                <p>Veuillez entrer les nom des joueurs</p>
+                
+                <fieldset>
+                    <label for="playerOneName">Nom du player 1</label>
+                    <input id="playerOneName" name ='playerOneName' type="text" >
+                </fieldset>
+                <fieldset>
+                    <label for="playerTwoName">Nom du player 2</label>
+                    <input id="playerTwoName" name="playerTwoName" type="text" >
+                </fieldset>
+                
+            
+            </section>
+        <section>
+            <h2>Veuillez choisir votre joueur</h2>
+            <dl>
+                <dt>Joueur 1</dt>
+                <dd>
+                    <ul class="player-choice player1">
+                        <li class ="naruto"></li>
+                        <li class ="sasuke"></li>
+                        <li class ="michou"></li>
+
+                        
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt>Joueur 2</dt>
+                <dd>
+                    <ul class="player-choice player2">
+                        <li class ="naruto"></li>
+                        <li class ="sasuke"></li>
+                        <li class ="michou"></li>
+                    
+                    </ul>
+                </dd>
+            </dl>
+            <input type="hidden" name ="playerOne" id="playerOne">
+            <input type="hidden" name ="playerTwo" id="playerTwo">
+            
+        </section>
+        <section id="config-map">
+            <h2>Veuillez choisir votre map</h2>
+            <dl>
+               
+                <dd>
+                    <ul class="map-choice">
+                        <li class ="capcom"></li>
+                        <li class ="forest"></li>
+                        <li class ="dojo"></li>
+                        <li class ="endvaley"></li>
+                        <li class ="dragon"></li>
+                        <li class ="ferari"></li>
+                        <li class ="moon"></li>
+                        <li class ="village"></li>
+                    </ul>
+                </dd>
+            </dl>
+            <input type="hidden" name ='map' id="map">
+            
+
+        </section>
+        <fieldset>
+            <input type="submit" value='play'>
+        </fieldset>
+    </form> 
+        
+        
+    
+    <script src="js/tools.js"></script>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

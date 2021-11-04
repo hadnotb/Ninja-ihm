@@ -1,0 +1,107 @@
+body{
+    font-family: 'Permanent Marker', cursive;
+    background-image: url('../rsx/background-home-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#title{
+    text-align: center;
+}
+
+dl dd li{
+    width: 150px;
+    height: 150px;
+    border: solid black 1px;
+    padding: 1em;
+    transition : all 0.3s ease-out;
+}
+dl dd li:hover{
+    transform:rotate3d(1, 1, 1, 45deg);
+}
+dl dd {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*ul li.naruto{
+    background-image: url('../rsx/player2-head.png');
+    background-repeat: no-repeat;
+}
+ul li.sasuke{
+    background-image: url('../rsx/player1-head.png');
+    background-repeat: no-repeat;
+}*/
+section>dl:first-of-type ul li.naruto{
+    background-image: url('../rsx/naruto-head-right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+section>dl:last-of-type ul li.naruto{
+    background-image: url('../rsx/naruto-head-left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+section>dl:first-of-type ul li.sasuke{
+    background-image: url('../rsx/sasuke-head-right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+section>dl:last-of-type ul li.sasuke{
+    background-image: url('../rsx/sasuke-head-left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.player-choice{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    list-style-type: none;
+
+}
+
+.map-choice>li{
+    width:250px;
+    height: 150px;
+}
+.map-choice>li.capcom{
+    background-image: url('../rsx/background-capcom.gif');
+    background-size: cover;
+    
+}
+.map-choice>li.forest{
+    background-image: url('../rsx/background-forest.png');
+    background-size: cover;
+    
+}
+
+.map-choice>li.dojo{
+    background-image: url('../rsx/background-dojo.jpg');
+    background-size: cover;
+}
+
+.map-choice>li.endvaley{
+    background-image: url('../rsx/background-endvaley.jpg');
+    background-size: cover;
+}
+
+.map-choice>li.dragon{
+    background-image: url('../rsx/background-dragon.gif');
+    background-size: cover;
+    
+}
+.map-choice>li.ferari{
+    background-image: url('../rsx/background-ferari.gif');
+    background-size: cover;
+    
+}
+
+.map-choice>li.moon{
+    background-image: url('../rsx/background-moon.gif');
+    background-size: cover;
+}
+
+.map-choice>li.village{
+    background-image: url('../rsx/background-village.gif');
+    background-size: cover;
+}

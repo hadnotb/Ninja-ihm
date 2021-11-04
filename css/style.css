@@ -1,0 +1,451 @@
+:root{
+    /* Duréee de l'animation */
+    --animation-duration: 0.5s;
+
+    --animation-fill-mode: forwards;
+
+}
+
+body{
+    font-family: 'Permanent Marker', cursive;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#Scene{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../rsx/background-forest.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    
+}
+/* ---------------------Scene---------------------------*/
+
+#Scene.capcom{
+
+    background-image: url('../rsx/background-capcom.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+#Scene.forest{
+
+    background-image: url('../rsx/background-forest.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+#Scene.dojo{
+
+    background-image: url('../rsx/background-dojo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+#Scene.endvaley{
+
+    background-image: url('../rsx/background-endvaley.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+#Scene.dragon{
+
+    background-image: url('../rsx/background-dragon.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+#Scene.ferari{
+
+    background-image: url('../rsx/background-ferari.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+#Scene.moon{
+
+    background-image: url('../rsx/background-moon.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+
+}
+#Scene.village{
+
+    background-image: url('../rsx/background-village.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+/* ------------------------------------------------------ */
+
+.damage{
+    animation-name: damaged;
+    animation-delay: 0.35s;
+    animation-duration: 0.2s;
+}
+div.player-life{
+    
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+div.player-life>div{
+    background-color: green;
+    border: 1px solid red;
+    height :20px;
+    
+}
+div.player-life>div.damaged{
+    background-color: red;
+}
+/* .lifeCells{
+    background-color: green;
+} */
+.players-data{
+    display: flex;
+    
+}
+.players-data>div{
+    display: flex;
+    flex-wrap: wrap;
+    width :50%;
+    padding: 1em;
+}
+.players-data>div:first-child{
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.players-data>div:last-child{
+
+    justify-content: flex-end;
+    text-align: right;
+}
+.players-data>div>div{
+    width:100%
+}
+.players-data>div:last-child .player-life{
+    flex-direction: row-reverse;
+}
+
+#Play-again{
+    display: none;
+}
+
+#Play-again.Play-again-show{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+}
+
+#PlayerOne{
+    bottom: 70px;
+    right: 200px;
+    animation-name: player1-bodyMove;
+    animation-duration : var(--animation-duration);
+    animation-iteration-count: infinite;
+}
+#PlayerTwo{
+    bottom: 70px;
+    left: 200px;
+    animation-name: player2-bodyMove;
+    animation-duration : var(--animation-duration);
+    animation-iteration-count: infinite;
+}
+
+#PlayerOne.loser .Player-head{
+    animation-name: player1-head-shot;
+    animation-duration : var(--animation-duration);
+    animation-fill-mode: forwards;
+    animation-delay: 0.35s;
+
+}
+
+
+#PlayerTwo.loser .Player-head{
+    animation-play-state: player1-bodyMove paused;
+    animation-name: player2-head-shot;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.35s;
+}
+
+.Player{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Player-head{
+    width: 250px;
+    height: 150px;
+    position: relative;
+}
+.Player-body{
+    
+    width:250px;
+    height: 200px;
+    
+}
+.Shuriken{
+    width: 40px;
+    height: 21px;
+    position: absolute;
+    background-image: url('../rsx/shuriken.png ');
+    background-repeat: no-repeat;
+}
+#PlayerOne .Shuriken{
+    left: -13px;
+    bottom: 150px;
+}
+#PlayerTwo .Shuriken{
+    left: 138px;
+    bottom: 123px;
+}
+
+#PlayerOne.playing .Shuriken{
+    left: 75px;
+    bottom: 180px;
+    animation-name: shuri-kill-playertwo;
+    animation-duration: 1s;
+    animation-fill-mode: var(--animation-fill-mode);
+}
+#PlayerTwo.playing .Shuriken{
+    left: 125px;
+    bottom: 180px;
+    animation-name: shuri-kill-playerone;
+    animation-duration: 1s;
+    animation-fill-mode: var(--animation-fill-mode);
+}
+
+
+/* Player HEAD */
+
+#PlayerOne.naruto .Player-head{
+    background-image: url('../rsx/naruto-head-right.png');
+    background-repeat: no-repeat;
+    top: 29px;
+    left: 15px;
+}
+#PlayerOne.sasuke .Player-head{
+    background-image: url('../rsx/sasuke-head-right.png');
+    background-repeat: no-repeat;
+    top: 29px;
+    left: -23px;
+}
+#PlayerTwo.naruto .Player-head{
+    background-image: url('../rsx/naruto-head-left.png');
+    background-repeat: no-repeat;
+    top: 11px;
+    left: -12px;
+}
+#PlayerTwo.sasuke  .Player-head{
+    background-image: url('../rsx/sasuke-head-left.png');
+    background-repeat: no-repeat;
+    top: 18px;
+    left: 31px;
+}
+/* PLayer BODY */
+
+#PlayerOne.naruto .Player-body{
+    background-image: url('../rsx/naruto-body-right.png');
+    background-repeat: no-repeat;
+}
+#PlayerOne.sasuke .Player-body{
+    background-image: url('../rsx/sasuke-body-right.png');
+    background-repeat: no-repeat;
+}
+
+#PlayerTwo.naruto .Player-body{
+    background-image: url('../rsx/naruto-body-left.png');
+    background-repeat: no-repeat;
+}
+#PlayerTwo.sasuke .Player-body{
+    background-image: url('../rsx/sasuke-body-left.png');
+    background-repeat: no-repeat;
+}
+/* Player PlAYING */
+#PlayerOne.playing.naruto .Player-head{
+    display: block;
+    background-image: url('../rsx/naruto-head-playing-right.png');
+    background-repeat: no-repeat;
+    top: 29px;
+    left: -23px;
+}
+#PlayerOne.playing.sasuke .Player-head{
+    display: block;
+    background-image: url('../rsx/sasuke-head-playing-right.png');
+    background-repeat: no-repeat;
+    top: 29px;
+    left: -23px;
+}
+#PlayerOne.playing.naruto .Player-body{
+
+    background-image: url('../rsx/naruto-body-playing-right.png');
+    background-repeat: no-repeat;    
+}
+#PlayerOne.playing.sasuke .Player-body{
+
+    background-image: url('../rsx/sasuke-body-playing-right.png');
+    background-repeat: no-repeat;    
+}
+
+#PlayerTwo.playing.naruto .Player-head{
+    display: block;
+    background-image: url('../rsx/naruto-head-playing-left.png');
+    background-repeat: no-repeat;
+    top: 11px;
+    left: -12px;
+}
+#PlayerTwo.playing.sasuke .Player-head{
+    display: block;
+    background-image: url('../rsx/sasuke-head-playing-left.png');
+    background-repeat: no-repeat;
+    top: 11px;
+    left: -12px;
+}
+#PlayerTwo.playing.naruto .Player-body{
+    background-image: url('../rsx/naruto-body-playing-left.png');
+    background-repeat: no-repeat;    
+}
+#PlayerTwo.playing.sasuke .Player-body{
+    background-image: url('../rsx/sasuke-body-playing-left.png');
+    background-repeat: no-repeat;    
+}
+
+
+/* Player WINNER */
+
+
+#PlayerOne.winner {
+    animation-name : player1-escape;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.35s;
+}
+#PlayerTwo.winner {
+    animation-name : player2-escape;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.35s;
+}
+#PlayerOne.winner.naruto .Player-body{
+    background-image: url('../rsx/naruto-escape-right.png');
+    background-repeat: no-repeat;
+}
+#PlayerOne.winner.sasuke .Player-body{
+    background-image: url('../rsx/sasuke-escape-right.png');
+    background-repeat: no-repeat;
+    
+}
+
+#PlayerTwo.winner.naruto .Player-body{
+    background-image: url('../rsx/naruto-escape-left.png');
+    background-repeat: no-repeat;
+    
+}
+#PlayerTwo.winner.sasuke .Player-body{
+    background-image: url('../rsx/sasuke-escape-left.png');
+    background-repeat: no-repeat;
+}
+
+
+#PlayerOne.winner.naruto .Player-head{
+    display: none;
+}
+#PlayerOne.winner.sasuke .Player-head{
+    display: none;
+}
+#PlayerTwo.winner.naruto .Player-head{
+    display: none;
+    left: 30px;
+}
+#PlayerTwo.winner.sasuke .Player-head{
+    display: none;
+    left: 30px;
+}
+
+/* Player Looser */
+
+#musicControl{
+    position: absolute;
+    left: 25px;
+    top: 100px;
+}
+
+ /* The animation code */
+ @keyframes damaged {
+    0%   {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+ @keyframes shuri-kill-playerone {
+    0%   {left: 137px; bottom: 149px;}
+    100% {left:110vw; bottom:180px;}
+  }
+  @keyframes shuri-kill-playertwo {
+    0%   {left: -4px; bottom: 118px;}
+    100% {left:-110vw; bottom:180px;}
+  }
+  @keyframes player1-head-shot{
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg); top: 250px; left:100px}
+  }
+  @keyframes player2-head-shot{
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg); top: 250px; left:-100px}
+  }
+  @keyframes player1-escape{
+    0%   {bottom: 150px; right: 200px;}
+    100% {bottom: 130px; right: 200px; }
+  }
+  @keyframes player2-escape{
+    0%   {bottom: 150px; left: 200px;}
+    100% {bottom: 130px; left: 200px;}
+  }
+  @keyframes player2-bodyMove{
+    0%   {bottom: 30px; left: 200px;}
+    25%  {bottom: 40px; left:180px;}
+    50%  {bottom: 30px; left:160px;}
+    75%  {bottom: 40px; left:180px;}
+    100% {bottom: 30px; left: 200px;}
+  }
+ 
+ 
+  @keyframes player1-bodyMove{
+    0%   {bottom: 30px; right: 200px;}
+    25%  {bottom: 40px; right: 180px;}
+    50%  {bottom : 30px; right:160px;}
+    75%  {bottom: 40px; right: 180px;}
+    100% {bottom: 30px; right: 200px;}
+  }
+  /* @keyframes player1-playing{
+    0%   {bottom: 150px; right: 200px;}
+    100%   {bottom: 250px; right: 200px;}
+  }
+  @keyframes player2-playing{
+    0%   {bottom: 150px; left: 200px;}
+    100% {bottom:250px; left:150px}
+  } */
+  
+  /* The element to apply the animation to */
+  /* div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+  }  */

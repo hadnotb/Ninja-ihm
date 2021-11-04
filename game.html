@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+        <div class="players-data">
+            <div id="PlayerTwo-data">
+                <div id="PlayerTwo-name"></div>
+                <div id="PlayerTwo-life"></div>
+            </div>
+            <div id="PlayerOne-data">
+                <div id="PlayerOne-name"></div>
+                <div id="PlayerOne-life"></div>
+            </div>
+           
+        </div>
+    <div id="Scene">
+        <div id="PlayerOne" class="Player">
+            <div id="Shuriken1" class="Shuriken"></div>
+            <div class="Player-head"></div>
+            <div class="Player-body"></div>
+        </div>
+        <div id="PlayerTwo" class="Player">
+            <div id="Shuriken2" class="Shuriken"></div>
+            <div class="Player-head"></div>
+            <div class="Player-body"></div>
+        </div>
+    </div>
+    <button id="Play-again">Play Again</button>
+    <audio id ="musicControl" controls autoplay muted>
+        <source src="rsx/11_Heavy_Violence.ogg" type ="audio/ogg">
+    </audio>
+    
+<script src="js/tools.js"></script>
+<script src="js/life.js"></script>
+<script src="js/player.js"></script>
+<script src="js/map.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
